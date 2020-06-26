@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Title from "./Component/Title";
 import Traveller from "./Component/Traveller";
-import Countries from "./Component/Countries";
+import Continents from "./Component/Continents";
 import { Router } from "@reach/router";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Title></Title>
       <Traveller></Traveller>
       <Router>
-        <Countries path="/"></Countries>
+        <Continents path="/"></Continents>
       </Router>
     </div>
   );

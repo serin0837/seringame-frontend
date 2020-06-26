@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Loader from "./Loader";
 
 class Countries extends Component {
   state = {
@@ -8,16 +9,25 @@ class Countries extends Component {
   };
   componentDidMount() {
     axios.get("https://seringame.herokuapp.com/countries").then(({ data }) => {
-      console.log({ data });
-      //   this.setState({ countries: data, isLoading: false });
+      console.log(data);
+      this.setState({ countries: data, isLoading: false });
     });
   }
   render() {
-    const { countries, isLoading } = this.state;
+    const { isLoading, countries } = this.state;
+    if (isLoading) return <Loader />;
     return (
       <main>
-        <p>{countries.country_name}</p>
-        <p>country come out</p>
+        {countries.map((country) => {
+          console.log(country);
+          return (
+            <article key={country.id}>
+              <h3>{country.country_name}</h3>
+              <p>{country.capital}</p>
+              <img src={country.country_img} alt={country.country_name} />
+            </article>
+          );
+        })}
       </main>
     );
   }
