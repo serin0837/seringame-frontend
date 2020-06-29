@@ -5,23 +5,20 @@ import Loader from "./Loader";
 class Traveller extends Component {
   state = {
     travellers: [],
-    isLoading: true,
   };
   componentDidMount() {
     axios.get("https://seringame.herokuapp.com/travellers").then(({ data }) => {
-      console.log(data);
-      this.setState({ travellers: data, isLoading: false });
+      this.setState({ travellers: data });
     });
   }
   render() {
-    const { isLoading, travellers } = this.state;
-    if (isLoading) return <Loader />;
+    const { travellers } = this.state;
     return (
       <aside>
+        <h3>Traveller</h3>
         {travellers.map((traveller) => {
-          console.log(traveller);
           return (
-            <article>
+            <article key={traveller.id}>
               <p>{traveller.Name}</p>
             </article>
           );

@@ -4,6 +4,7 @@ import Title from "./Component/Title";
 import Traveller from "./Component/Traveller";
 import Continents from "./Component/Continents";
 import { Router } from "@reach/router";
+import Countries from "./Component/Countries";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Traveller></Traveller>
       <Router>
         <Continents path="/"></Continents>
+        <Countries path="/continents/:continent.name" />
       </Router>
     </div>
   );

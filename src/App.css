@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-areas: "header header" "aside main";
-  grid-template-columns: 100px auto;
+  grid-template-areas: "header aside" "main main";
+  grid-template-columns: auto 100px;
   grid-template-rows: 200px auto;
 }
 header {
@@ -15,4 +15,11 @@ aside {
 }
 main {
   grid-area: main;
+}
+.countries {
+  display: grid;
+  grid-template-columns: 100px auto;
+}
+.country_img {
+  width: 500px;
 }

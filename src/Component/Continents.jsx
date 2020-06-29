@@ -10,7 +10,6 @@ class Continents extends Component {
   };
   componentDidMount() {
     axios.get("https://seringame.herokuapp.com/continents").then(({ data }) => {
-      console.log(data);
       this.setState({ continents: data, isLoading: false });
     });
   }
@@ -20,10 +19,9 @@ class Continents extends Component {
     return (
       <main>
         {continents.map((continent) => {
-          console.log(continent);
           return (
-            <Link key={continent.id} to={`/continents/${continent.continent}`}>
-              <h2>{continent.continent}</h2>
+            <Link key={continent.id} to={`/continents/${continent.name}`}>
+              <h2>{continent.name}</h2>
             </Link>
           );
         })}

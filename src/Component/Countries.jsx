@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Loader from "./Loader";
+import Countrycard from "./Countrycard";
+import Continents from "./Continents";
 
 class Countries extends Component {
   state = {
@@ -17,17 +19,16 @@ class Countries extends Component {
     const { isLoading, countries } = this.state;
     if (isLoading) return <Loader />;
     return (
-      <main>
-        {countries.map((country) => {
-          console.log(country);
-          return (
-            <article key={country.id}>
-              <h3>{country.country_name}</h3>
-              <p>{country.capital}</p>
-              <img src={country.country_img} alt={country.country_name} />
-            </article>
-          );
-        })}
+      <main className="countries">
+        <ul>
+          <Continents />
+        </ul>
+        <section>
+          {countries.map((country) => {
+            console.log(country);
+            return <Countrycard key={country.id} {...country} />;
+          })}
+        </section>
       </main>
     );
   }

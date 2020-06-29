@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const Title = () => {
   return (
     <header>
-      <h1>World Travel</h1>
+      <Link to="/">
+        <h1>🌎World Travel✈</h1>
+      </Link>
     </header>
   );
 };
