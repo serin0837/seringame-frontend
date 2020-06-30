@@ -13,7 +13,7 @@ function App() {
       <Traveller></Traveller>
       <Router>
         <Continents path="/"></Continents>
-        <Countries path="/continents/:continent.name" />
+        <Countries path="/continents/:continentid" />
       </Router>
     </div>
   );

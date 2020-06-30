@@ -16,6 +16,16 @@ aside {
 main {
   grid-area: main;
 }
+.continentlist {
+  display: grid;
+  grid-template-areas:
+    "europe africa"
+    "asia australia"
+    "northamerica southamerica";
+}
+.continent_img {
+  width: 500px;
+}
 .countries {
   display: grid;
   grid-template-columns: 100px auto;
