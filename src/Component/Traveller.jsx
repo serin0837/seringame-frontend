@@ -20,6 +20,8 @@ class Traveller extends Component {
           return (
             <article key={traveller.id}>
               <p>{traveller.Name}</p>
+              <p>{traveller.Visited_place}</p>
+              <p>{traveller.Favorite_place}</p>
             </article>
           );
         })}

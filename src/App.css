@@ -1,9 +1,9 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-areas: "header aside" "main main";
+  grid-template-areas: "header aside" "main aside";
   grid-template-columns: auto 100px;
-  grid-template-rows: 200px auto;
+  grid-template-rows: 100px auto;
 }
 header {
   grid-area: header;
@@ -13,23 +13,18 @@ aside {
   display: flex;
   flex-direction: column;
 }
+
 main {
   grid-area: main;
 }
-.continentlist {
-  display: grid;
-  grid-template-areas:
-    "europe africa"
-    "asia australia"
-    "northamerica southamerica";
-}
-.continent_img {
-  width: 500px;
+
+.world_img {
+  width: 1000px;
 }
 .countries {
   display: grid;
   grid-template-columns: 100px auto;
 }
 .country_img {
-  width: 500px;
+  width: 100px;
 }

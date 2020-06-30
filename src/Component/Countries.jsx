@@ -10,6 +10,15 @@ class Countries extends Component {
     isLoading: true,
   };
   componentDidMount() {
+    this.getCountry();
+  }
+  componentDidUpdate(previousProps, previousState) {
+    console.log("this component has updated!");
+    if (this.props.continentid !== previousProps.continentid) {
+      this.getCountry();
+    }
+  }
+  getCountry = () => {
     axios
       .get(
         `https://seringame.herokuapp.com/continents/${this.props.continentid}`
@@ -18,7 +27,8 @@ class Countries extends Component {
         console.log(data);
         this.setState({ countries: data.countries, isLoading: false });
       });
-  }
+  };
+
   render() {
     const { isLoading, countries } = this.state;
     if (isLoading) return <Loader />;

@@ -17,26 +17,17 @@ class Continents extends Component {
     const { isLoading, continents } = this.state;
     if (isLoading) return <Loader />;
     return (
-      <main calssName="continentlist">
+      <nav>
         {continents.map((continent) => {
           return (
-            <ul>
-              <Link
-                className="{continent.name}"
-                key={continent.id}
-                to={`/continents/${continent.id}`}
-              >
+            <ul key={continent.id}>
+              <Link to={`/continents/${continent.id}`}>
                 <h2>{continent.name}</h2>
-                <img
-                  className="continent_img"
-                  src={continent.continent_img}
-                  alt={continent.name}
-                />
               </Link>
             </ul>
           );
         })}
-      </main>
+      </nav>
     );
   }
 }
