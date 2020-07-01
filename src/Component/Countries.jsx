@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import Countrycard from "./Countrycard";
-import Continents from "./Continents";
 
 class Countries extends Component {
   state = {
@@ -32,18 +31,11 @@ class Countries extends Component {
   render() {
     const { isLoading, countries } = this.state;
     if (isLoading) return <Loader />;
-    console.log(countries);
     return (
-      <main className="countries">
-        <ul>
-          <Continents />
-        </ul>
-        <section>
-          {countries.map((country) => {
-            console.log(country);
-            return <Countrycard key={country.id} {...country} />;
-          })}
-        </section>
+      <main>
+        {countries.map((country) => {
+          return <Countrycard key={country.id} {...country} />;
+        })}
       </main>
     );
   }

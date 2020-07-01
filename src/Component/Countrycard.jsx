@@ -5,7 +5,7 @@ const Countrycard = ({ country_name, capital, country_img }) => {
   return (
     <section>
       <h3>{country_name}</h3>
-      <img class="country_img" src={country_img} alt={country_name} />
+      <img className="country_img" src={country_img} alt={country_name} />
     </section>
   );
 };

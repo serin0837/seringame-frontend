@@ -1,28 +1,27 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Loader from "./Loader";
 import { Link } from "@reach/router";
 
-class Continents extends Component {
+//continent list
+class Navbar extends Component {
   state = {
     continents: [],
-    isLoading: true,
   };
   componentDidMount() {
     axios.get("https://seringame.herokuapp.com/continents").then(({ data }) => {
-      this.setState({ continents: data, isLoading: false });
+      console.log(data);
+      this.setState({ continents: data });
     });
   }
   render() {
-    const { isLoading, continents } = this.state;
-    if (isLoading) return <Loader />;
+    const { continents } = this.state;
     return (
       <nav>
         {continents.map((continent) => {
           return (
             <ul key={continent.id}>
               <Link to={`/continents/${continent.id}`}>
-                <h2>{continent.name}</h2>
+                <p>{continent.name}</p>
               </Link>
             </ul>
           );
@@ -32,4 +31,4 @@ class Continents extends Component {
   }
 }
 
-export default Continents;
+export default Navbar;

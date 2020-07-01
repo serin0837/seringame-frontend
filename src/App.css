@@ -1,12 +1,17 @@
 .App {
   text-align: center;
   display: grid;
-  grid-template-areas: "header aside" "main aside";
-  grid-template-columns: auto 100px;
+  grid-template-areas: "header header header" "nav main aside";
+  grid-template-columns: 120px auto 120px;
   grid-template-rows: 100px auto;
 }
 header {
   grid-area: header;
+}
+nav {
+  grid-area: nav;
+  display: flex;
+  flex-direction: column;
 }
 aside {
   grid-area: aside;
@@ -21,10 +26,7 @@ main {
 .world_img {
   width: 1000px;
 }
-.countries {
-  display: grid;
-  grid-template-columns: 100px auto;
-}
+
 .country_img {
   width: 100px;
 }

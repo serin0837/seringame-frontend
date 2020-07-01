@@ -1,31 +1,43 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Loader from "./Loader";
+import axios from "axios";
+import ImaginaryCountry from "./ImaginaryCountry";
 
 class Traveller extends Component {
   state = {
-    travellers: [],
+    traveller: [],
+    isLoading: true,
   };
   componentDidMount() {
-    axios.get("https://seringame.herokuapp.com/travellers").then(({ data }) => {
-      this.setState({ travellers: data });
-    });
+    this.getTraveller();
   }
+  componentDidUpdate(previousProps, previousState) {
+    // console.log("travaller has updated");
+    if (this.props.travellerid !== previousProps.travellerid) {
+      this.getTraveller();
+    }
+  }
+  getTraveller = () => {
+    axios
+      .get(
+        `https://seringame.herokuapp.com/travellers/${this.props.travellerid}`
+      )
+      .then(({ data }) => {
+        // console.log(data, "<travellerdata");
+        this.setState({ traveller: data, isLoading: false });
+      });
+  };
   render() {
-    const { travellers } = this.state;
+    const { isLoading, traveller } = this.state;
+    if (isLoading) return <Loader />;
     return (
-      <aside>
-        <h3>Traveller</h3>
-        {travellers.map((traveller) => {
-          return (
-            <article key={traveller.id}>
-              <p>{traveller.Name}</p>
-              <p>{traveller.Visited_place}</p>
-              <p>{traveller.Favorite_place}</p>
-            </article>
-          );
-        })}
-      </aside>
+      <main>
+        <h5>{traveller.Name}</h5>
+        <section>
+          <p>add your imaginary country</p>
+          <ImaginaryCountry />
+        </section>
+      </main>
     );
   }
 }
