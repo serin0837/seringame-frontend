@@ -6,22 +6,24 @@ import { Link } from "@reach/router";
 class Travellers extends Component {
   state = {
     travellers: [],
+    isLoading: true,
   };
   componentDidMount() {
     axios
       .get("https://seringame.herokuapp.com/travellers/")
       .then(({ data }) => {
-        console.log(data, "<--");
-        this.setState({ travellers: data });
+        // console.log(data, "<--");
+        this.setState({ travellers: data, isLoading: false });
       });
   }
   render() {
-    const { travellers } = this.state;
+    const { isLoading, travellers } = this.state;
+    if (isLoading) return <Loader />;
     return (
       <aside>
         <h3>Traveller</h3>
         {travellers.map((traveller) => {
-          console.log(traveller);
+          // console.log(traveller);
           return (
             <article key={traveller.id}>
               <Link to={`/travellers/${traveller.id}`}>

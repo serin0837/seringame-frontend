@@ -10,6 +10,7 @@ import Navbar from "./Component/Navbar";
 import FavoriteCountry from "./Component/FavoriteCountry";
 import VisitedCountry from "./Component/VisitedCountry";
 import Traveller from "./Component/Traveller";
+import Footer from "./Component/Footer";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       <Navbar></Navbar>
       <Travellers></Travellers>
       {/* <ImaginaryCountry></ImaginaryCountry> */}
-      <Router>
+      <Router className="main">
         <Homepage path="/" />
         <Countries path="/continents/:continentid" />
         <Traveller path="/travellers/:travellerid" />
@@ -26,6 +27,7 @@ function App() {
         <FavoriteCountry ></FavoriteCountry> */}
         {/* <ImaginaryCountry path="/travellers/:travellerid"></ImaginaryCountry> */}
       </Router>
+      <Footer />
     </div>
   );
 }

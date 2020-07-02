@@ -9,7 +9,7 @@ class Navbar extends Component {
   };
   componentDidMount() {
     axios.get("https://seringame.herokuapp.com/continents").then(({ data }) => {
-      console.log(data);
+      // console.log(data);
       this.setState({ continents: data });
     });
   }
@@ -17,6 +17,7 @@ class Navbar extends Component {
     const { continents } = this.state;
     return (
       <nav>
+        <h5>Continents</h5>
         {continents.map((continent) => {
           return (
             <ul key={continent.id}>

@@ -32,9 +32,11 @@ class Countries extends Component {
     const { isLoading, countries } = this.state;
     if (isLoading) return <Loader />;
     return (
-      <main>
+      <main className="countrycard">
         {countries.map((country) => {
-          return <Countrycard key={country.id} {...country} />;
+          return (
+            <Countrycard className="items" key={country.id} {...country} />
+          );
         })}
       </main>
     );

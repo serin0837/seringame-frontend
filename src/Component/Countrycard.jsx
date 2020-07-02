@@ -1,13 +1,31 @@
 import React from "react";
-import { Link } from "@reach/router";
 
-const Countrycard = ({ country_name, capital, country_img }) => {
+const Countrycard = ({
+  GDP,
+  description,
+  country_name,
+  capital,
+  country_img,
+  populations,
+  religions,
+  terrains,
+}) => {
   return (
-    <section>
-      <h3>{country_name}</h3>
-      <img className="country_img" src={country_img} alt={country_name} />
-    </section>
+    <article>
+      <ul>
+        <li>
+          <h3>{country_name}</h3>
+          <h4>{capital}</h4>
+          <img className="country_img" src={country_img} alt={country_name} />
+          <p>{description}</p>
+          <p>GDP: {GDP} (billions)</p>
+          {/* <p>{populations.size}</p>
+          <p>{religions.name}</p>
+          <p>{terrains.name}</p> */}
+        </li>
+      </ul>
+    </article>
   );
 };
-
+//populations, religions, terrains not come out in webpage
 export default Countrycard;
