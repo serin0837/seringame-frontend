@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+//countryadder
 class ImaginaryCountry extends Component {
   state = {
     country_name: "",
@@ -25,7 +26,7 @@ class ImaginaryCountry extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="imaginarycountry" onSubmit={this.handleSubmit}>
         <label>
           Name:
           <input
@@ -35,6 +36,7 @@ class ImaginaryCountry extends Component {
             required
           ></input>
         </label>
+        <br />
         <label>
           Capital:
           <input
@@ -44,6 +46,7 @@ class ImaginaryCountry extends Component {
             required
           ></input>
         </label>
+        <br />
         <label>
           Description:
           <input
@@ -53,6 +56,7 @@ class ImaginaryCountry extends Component {
             required
           ></input>
         </label>
+        <br />
         <label>
           Image:
           <input
@@ -62,6 +66,7 @@ class ImaginaryCountry extends Component {
             required
           ></input>
         </label>
+        <br />
         <label>
           Population:
           <select onChange={this.handleInput} name="populations">
@@ -73,6 +78,7 @@ class ImaginaryCountry extends Component {
           </select>
         </label>
         <label>
+          <br />
           Religion:
           <select onChange={this.handleInput} name="religions">
             <option value="christianity">Christianity</option>
@@ -83,6 +89,7 @@ class ImaginaryCountry extends Component {
             <option value="make yours">Make yours</option>
           </select>
         </label>
+        <br />
         <button type="submit">Add Country!</button>
       </form>
     );

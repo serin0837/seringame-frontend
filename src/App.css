@@ -1,40 +1,38 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 .App {
   text-align: center;
   display: grid;
   grid-template-areas:
-    "header header header"
-    "nav main aside"
-    "footer footer footer";
+    "header aside"
+    "main main"
+    "footer footer";
   grid-gap: 10px;
   /* padding: 10px; */
-  grid-template-columns: 120px auto 120px;
+  grid-template-columns: auto 120px;
   grid-template-rows: 90px auto 100px;
 }
 header {
   grid-area: header;
 }
-nav {
-  grid-area: nav;
-  display: flex;
-  flex-direction: column;
-}
+
 main {
   grid-area: main;
   border: solid blue 3px;
+  display: flex;
+  flex-direction: row;
 }
 aside {
   grid-area: aside;
   display: flex;
   flex-direction: column;
 }
-
 footer {
   grid-area: footer;
   background-color: lightgray;
 }
 
 .world_img {
-  width: 1000px;
+  width: 1200px;
 }
 .countrycard {
   display: flex;
@@ -44,3 +42,37 @@ footer {
 .country_img {
   width: 200px;
 }
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.social-icon {
+  color: #fff;
+  height: 30px;
+}
+ul.social-icons {
+  margin-top: 20px;
+}
+.social-icons li {
+  vertical-align: top;
+  display: inline;
+  /* height: 20px;
+  width: 20px; */
+}
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+}
+.fa-twitter:hover {
+  background-color: #00aced;
+}
+.fa-linkedin:hover {
+  background-color: #0073a4;
+}
+.fa-github:hover {
+  background-color: #5a32a3;
+}
+/* .imaginarycountry {
+  text-align: start;
+} */

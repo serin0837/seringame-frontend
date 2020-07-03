@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "@reach/router";
 
 //continent list
-class Navbar extends Component {
+class Continents extends Component {
   state = {
     continents: [],
   };
@@ -16,7 +16,7 @@ class Navbar extends Component {
   render() {
     const { continents } = this.state;
     return (
-      <nav>
+      <section>
         <h5>Continents</h5>
         {continents.map((continent) => {
           return (
@@ -27,9 +27,9 @@ class Navbar extends Component {
             </ul>
           );
         })}
-      </nav>
+      </section>
     );
   }
 }
 
-export default Navbar;
+export default Continents;

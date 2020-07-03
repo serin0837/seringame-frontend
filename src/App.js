@@ -6,7 +6,7 @@ import { Router } from "@reach/router";
 import Countries from "./Component/Countries";
 import Homepage from "./Component/Homepage";
 import ImaginaryCountry from "./Component/ImaginaryCountry";
-import Navbar from "./Component/Navbar";
+// import Navbar from "./Component/Continents";
 import FavoriteCountry from "./Component/FavoriteCountry";
 import VisitedCountry from "./Component/VisitedCountry";
 import Traveller from "./Component/Traveller";
@@ -16,7 +16,6 @@ function App() {
   return (
     <div className="App">
       <Title></Title>
-      <Navbar></Navbar>
       <Travellers></Travellers>
       {/* <ImaginaryCountry></ImaginaryCountry> */}
       <Router className="main">
