@@ -11,12 +11,17 @@ import FavoriteCountry from "./Component/FavoriteCountry";
 import VisitedCountry from "./Component/VisitedCountry";
 import Traveller from "./Component/Traveller";
 import Footer from "./Component/Footer";
+import ViewToggler from "./Component/ViewToggler";
+import Continents from "./Component/Continents";
 
 function App() {
   return (
     <div className="App">
       <Title></Title>
       <Travellers></Travellers>
+      <ViewToggler>
+        <Continents />
+      </ViewToggler>
       {/* <ImaginaryCountry></ImaginaryCountry> */}
       <Router className="main">
         <Homepage path="/" />

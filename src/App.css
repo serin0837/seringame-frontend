@@ -11,6 +11,13 @@
   grid-template-columns: auto 120px;
   grid-template-rows: 90px auto 100px;
 }
+
+@media only screen and (max-width: 600px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+}
 header {
   grid-area: header;
 }
@@ -19,7 +26,7 @@ main {
   grid-area: main;
   border: solid blue 3px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 aside {
   grid-area: aside;
