@@ -14,10 +14,10 @@ const Countrycard = ({
     <article>
       <ul>
         <li>
-          <h3>{country_name}</h3>
-          <h4>{capital}</h4>
           <img className="country_img" src={country_img} alt={country_name} />
-          <p>{description}</p>
+          <h4>{country_name}</h4>
+          <p>{capital}</p>
+          {/* <p>{description}</p> */}
           <p>GDP: {GDP} (billions)</p>
           {/* <p>{populations.size}</p>
           <p>{religions.name}</p>

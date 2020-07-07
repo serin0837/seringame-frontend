@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import Countrycard from "./Countrycard";
+import ViewToggler from "./ViewToggler";
+import Continents from "./Continents";
 
 class Countries extends Component {
   state = {
@@ -33,6 +35,9 @@ class Countries extends Component {
     if (isLoading) return <Loader />;
     return (
       <main className="countrycard">
+        <ViewToggler className="continentdropdown">
+          <Continents className="drondowncontent" />
+        </ViewToggler>
         {countries.map((country) => {
           return (
             <Countrycard className="items" key={country.id} {...country} />
