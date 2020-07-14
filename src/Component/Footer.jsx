@@ -5,22 +5,25 @@ class Footer extends Component {
     return (
       <footer>
         <section>
-          <h4>Serin Jeon serin0837@icloud.com</h4>
+          <p>Serin Jeon serin0837@icloud.com</p>
           <ul className="social-icons">
             <li>
-              <a href="" className="social-icon">
+              <a href="https://twitter.com/SerinJeon" className="social-icon">
                 {" "}
                 <i className="fa fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="" className="social-icon">
+              <a
+                href="https://www.linkedin.com/in/serin-jeon/"
+                className="social-icon"
+              >
                 {" "}
                 <i className="fa fa-linkedin"></i>
               </a>
             </li>
             <li>
-              <a href="" className="social-icon">
+              <a href="https://github.com/serin0837" className="social-icon">
                 {" "}
                 <i className="fa fa-github"></i>
               </a>

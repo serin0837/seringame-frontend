@@ -21,20 +21,16 @@ class Travellers extends Component {
     if (isLoading) return <Loader />;
     return (
       <aside>
-        <h3>Traveller</h3>
+        <h5>Traveller</h5>
         {travellers.map((traveller) => {
           // console.log(traveller);
           return (
             <article key={traveller.id}>
               <Link to={`/travellers/${traveller.id}`}>
                 <p>{traveller.Name}</p>
+                <p>{traveller.avata}</p>
               </Link>
-              {/* <Link to={`/travellers/${traveller.id}`}>
-                <p>Imaginary Country</p>
-              </Link> */}
-              {/* <Link>
-                <p>{traveller.Favorite_place}</p>
-              </Link> */}
+              <button>be a traveller</button>
             </article>
           );
         })}

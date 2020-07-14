@@ -7,9 +7,11 @@ class ImaginaryCountry extends Component {
     country_name: "",
     capital: "",
     description: "",
+    GDP: 10,
     country_img: "",
     populations: "very small",
     religions: "christianity",
+    terrains: "come on",
   };
   handleInput = (event) => {
     const { name, value } = event.target;
@@ -32,7 +34,7 @@ class ImaginaryCountry extends Component {
           <input
             type="text"
             onChange={this.handleInput}
-            name="planet_name"
+            name="country_name"
             required
           ></input>
         </label>

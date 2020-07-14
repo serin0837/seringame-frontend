@@ -19,9 +19,25 @@ const Countrycard = ({
           <p>{capital}</p>
           {/* <p>{description}</p> */}
           <p>GDP: {GDP} (billions)</p>
-          {/* <p>{populations.size}</p>
-          <p>{religions.name}</p>
-          <p>{terrains.name}</p> */}
+          <p>
+            Population:
+            {populations.map((population) => {
+              console.log(population);
+              return population.size;
+            })}
+          </p>
+          {/* // <p>{religions.name}</p>
+          // <p>{terrains.name}</p> */}
+
+          {/* "populations":[{"id":11,
+          "very_small":null,
+          "small":null,
+          "medium":null,
+          "big":null,
+          "very_big":null,
+          "created_at":"2020-06-30T15:30:48.446Z",
+          "updated_at":"2020-06-30T15:30:48.446Z",
+          "size":"very large"}], */}
         </li>
       </ul>
     </article>

@@ -16,7 +16,7 @@ class Continents extends Component {
   render() {
     const { continents } = this.state;
     return (
-      <section>
+      <nav>
         <h5>Continents</h5>
         {continents.map((continent) => {
           return (
@@ -27,7 +27,7 @@ class Continents extends Component {
             </ul>
           );
         })}
-      </section>
+      </nav>
     );
   }
 }

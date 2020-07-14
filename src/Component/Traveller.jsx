@@ -33,6 +33,12 @@ class Traveller extends Component {
     return (
       <main>
         <h5>{traveller.Name}</h5>
+        <p>
+          Visited Countries:
+          {traveller.countries.map((country) => {
+            return country.country_name;
+          })}
+        </p>
         <section>
           <p>add your imaginary country</p>
           <ImaginaryCountry />
