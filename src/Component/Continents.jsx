@@ -16,18 +16,17 @@ class Continents extends Component {
   render() {
     const { continents } = this.state;
     return (
-      <nav>
-        <h5>Continents</h5>
+      <main className="main">
         {continents.map((continent) => {
           return (
             <ul key={continent.id}>
               <Link to={`/continents/${continent.id}`}>
-                <p>{continent.name}</p>
+                <p className="continent-list">{continent.name}</p>
               </Link>
             </ul>
           );
         })}
-      </nav>
+      </main>
     );
   }
 }

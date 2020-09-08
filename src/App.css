@@ -1,45 +1,121 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+:root {
+  --main-blue: #42d7e6;
+}
 .App {
+  background-color: var(--main-white);
   text-align: center;
+  font-size: 1.8rem;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-areas:
-    "header header header"
-    "nav main aside"
-    "footer footer footer";
-  grid-gap: 10px;
-  /* padding: 10px; */
-  grid-template-columns: 100px auto 120px;
-  grid-template-rows: 90px auto 100px;
+    "header header"
+    "main aside"
+    "footer footer";
+  grid-template-rows: 80px auto 100px;
+  grid-template-columns: auto 100px;
 }
 
 header {
   grid-area: header;
+  background-color: var(--main-blue);
 }
 
 main {
   grid-area: main;
-  border: solid blue 3px;
-  display: flex;
-  flex-direction: column;
+  height: 80vh;
 }
 aside {
   grid-area: aside;
-  display: flex;
-  flex-direction: column;
+  z-index: 2;
+  visibility: hidden;
 }
-nav {
+/* nav {
   grid-area: nav;
   display: flex;
   flex-direction: column;
-}
+} */
 footer {
   grid-area: footer;
   background-color: lightgray;
+  z-index: 2;
 }
 
-.world_img {
-  width: 1000px;
+a {
+  text-decoration: none;
 }
+
+/* -----------------global */
+.title {
+  color: #eee;
+  font-size: 2.5rem;
+  padding: 1rem;
+  display: inline;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.logo {
+  height: 80px;
+}
+
+header p {
+  color: #eee;
+  padding: 1rem;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  margin: 0rem auto;
+  padding: 0rem 5.5em;
+  margin-bottom: 5rem;
+}
+.main:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 2;
+  bottom: 2;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+  background-image: url(./img/flagmap.png);
+  background-size: cover;
+  background-position: 50% 0;
+}
+ul {
+  padding: 0;
+  z-index: 2;
+  position: relative;
+  list-style: none;
+}
+.continent-list {
+  background-color: var(--main-blue);
+  color: #e5641e;
+  margin: 1rem;
+  padding: 2rem;
+  width: 100px;
+  height: 70px;
+  border-radius: 5rem;
+  border: 3px solid #eee;
+}
+
+aside {
+  border-left: solid #e5641e 1px;
+}
+
 .button {
   width: 300px;
   height: 80px;
@@ -53,10 +129,6 @@ footer {
 .country_img {
   width: 150px;
   height: 100px;
-}
-ul {
-  padding: 0;
-  list-style: none;
 }
 
 .social-icon {
